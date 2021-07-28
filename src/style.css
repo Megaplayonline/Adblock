@@ -1,0 +1,292 @@
+/*!
+ * Anti-adblock v2.1.0
+ * Copyright 2019 zkreations
+ * Daniel Abel M. (fb.com/danieI.abel)
+ * Licensed under MIT (github.com/zkreations/plugins/blob/master/LICENSE)
+ */
+@font-face {
+  font-family: "wgd";
+  src: url(https://cdn.jsdelivr.net/gh/da2l/host@1/dist/fonts/wgd.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="wgd-"]:before,
+[class*=" wgd-"]:before {
+  font-family: "wgd" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.wgd-usd:before {
+  content: "\61";
+}
+.wgd-eur:before {
+  content: "\62";
+}
+.wgd-btc:before {
+  content: "\63";
+}
+.wgd-times:before {
+  content: "\64";
+}
+@-webkit-keyframes square {
+  0% {
+    transform: translateY(0) scale(1.5) rotate(0);
+    opacity: 1
+  }
+  100% {
+    transform: translateY(-600px) scale(1) rotate(-200deg);
+    opacity: 0
+  }
+}
+@keyframes square {
+  0% {
+    transform: translateY(0) scale(1.5) rotate(0);
+    opacity: 1
+  }
+  100% {
+    transform: translateY(-600px) scale(1) rotate(-200deg);
+    opacity: 0
+  }
+}
+.WgD-particles i {
+  font-size: 4em;
+  font-weight: 400;
+  position: absolute;
+  bottom: -100px;
+  -webkit-animation: square 10s infinite;
+          animation: square 10s infinite;
+}
+.WgD-particles i:nth-child(6),
+.WgD-particles i:nth-child(4),
+.WgD-particles i:nth-child(11),
+.WgD-particles i:nth-child(8) {
+  font-size: 3em;
+}
+.WgD-particles i:nth-child(2),
+.WgD-particles i:nth-child(3),
+.WgD-particles i:nth-child(10) {
+  font-size: 2em;
+}
+.WgD-particles i {
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+}
+.WgD-particles i:nth-child(1) {
+  left: 15%;
+}
+.WgD-particles i:nth-child(2) {
+  left: 24%;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s
+}
+.WgD-particles i:nth-child(3) {
+  left: 50%;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s
+}
+.WgD-particles i:nth-child(4) {
+  left: 40%;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s
+}
+.WgD-particles i:nth-child(5) {
+  left: 36%;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s
+}
+.WgD-particles i:nth-child(6) {
+  left: 44%;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s
+}
+.WgD-particles i:nth-child(7) {
+  left: 58%;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s
+}
+.WgD-particles i:nth-child(8) {
+  left: 45%;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s
+}
+.WgD-particles i:nth-child(9) {
+  left: 66%;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s
+}
+.WgD-particles i:nth-child(10) {
+  left: 74%;
+  -webkit-animation-duration: 25s;
+          animation-duration: 25s
+}
+.WgD-particles i:nth-child(11) {
+  left: 80%;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s
+}
+body.ab-is-detected {
+  overflow: hidden !important;
+}
+#WgD {
+  display: none;
+}
+#WgD.is-detected {
+  display: block;
+}
+@-webkit-keyframes wgdfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes wgdfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#WgD {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 14px;
+  -webkit-animation: wgdfade .3s;
+          animation: wgdfade .3s;
+  z-index: 99999;
+}
+.WgD-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 900;
+}
+.WgD-title {
+  margin: 0;
+  margin-bottom: .5em;
+}
+.WgD-text {
+  margin: 0;
+  font-weight: 400;
+}
+.WgD-reload {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2em;
+  font-weight: 500;
+  transition: transform .3s;
+}
+.WgD-reload:hover {
+  transform: scale(1.05);
+}
+.WgD-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+  font-size: 20px;
+  color: #999;
+  padding: 1rem;
+  line-height: 1;
+  display: block;
+}
+.WgD-container img {
+  max-width: 100%;
+  margin-bottom: 1em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*
+=> Personalizacion
+*/
+
+/* Base
+-----------------------------------------*/
+#WgD {
+  font-family: 'Roboto', sans-serif; /*fuente*/
+  background: #f46b45;
+  background: linear-gradient(to right, #eea849, #f46b45);
+}
+.WgD-particles i {
+  color: rgba(0, 0, 0, 0.2); /*color particulas*/
+}
+/* Animacion (daneden.github.io/animate.css/)
+-----------------------------------------*/
+.WgD-container {
+  -webkit-animation: tada 1s;
+          animation: tada 1s; /*nombre y duracion*/
+}
+/* Cuerpo
+-----------------------------------------*/
+.WgD-container {
+  padding: 3.2em; /*naruto(relleno)*/
+  max-width: 450px; /*ancho maximo*/
+  background-color: #fff; /*fondo*/
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1); /*sombra*/
+  text-align: center; /*aliniacion del texto*/
+  line-height: 1.5; /*interlineado*/
+  border-radius: 10px; /*bordes redondeados*/
+  color: #37474F;
+}
+.WgD-title {
+  font-size: 1.6em; /*tamaño fuente*/
+}
+.WgD-text {
+  font-size: 1.2em; /*tamaño fuente*/
+}
+/* Boton Recargar
+-----------------------------------------*/
+.WgD-reload {
+  box-shadow: rgba(0, 0, 0, .12) 0 3px 13px 1px; /*sombra*/
+  color: #fff;
+  padding: 1em 1.5em; /*naruto(relleno)*/
+  background: #f46b45; /*fondo*/
+  border-radius: 3px; /*bordes redondeados*/
+}
+.WgD-reload:hover {
+    color: #fff;
+}
+.WgD-close:hover {
+    color: #464646;
+}
+/* Imagen
+-----------------------------------------*/
+.WgD-container img {
+  max-height: 200px; /*altura maxima*/
+}
+
+/*Demo*/
+.demo {
+  padding: 3rem;
+  background: #fff;
+  color: #757575;
+  margin: auto;
+  max-width: 400px;
+  position: absolute;
+  top: 50%;left: 50%;
+  transform: translate(-50%,-50%);
+}
+body {
+  background: #f1f1f1;
+  line-height: 1.5;
+}
